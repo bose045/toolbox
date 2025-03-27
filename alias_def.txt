@@ -1,0 +1,3 @@
+alias setalias="$TOOLBOXDIR/set_alias.sh"
+alias gitpush="$TOOLBOXDIR/git/push_to_git.sh"
+alias tpush="$TOOLBOXDIR/git/tpush.sh"

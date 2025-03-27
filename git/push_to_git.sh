@@ -1,4 +1,33 @@
 #!/bin/bash
+# Helper function
+show_help() {
+cat << EOF
+gitpush — Interactively commit and push the current Git repository to GitHub
+
+Usage:
+  gitpush
+  bash push_to_git.sh
+
+What it does:
+  - Detects existing GitHub repo from remote (if available)
+  - Prompts for repo name, GitHub username (default: bose045), and SSH/HTTPS
+  - Initializes Git repo if it doesn't exist
+  - Adds all new and modified files
+  - Re-stages tracked files to include permission changes (e.g., chmod +x)
+  - Commits with a user-provided message
+  - Pushes to origin/main and sets up tracking if needed
+
+Options:
+  -h, --help        Show this help message and exit
+
+Example:
+  gitpush
+EOF
+exit 0
+}
+
+# Show help if requested
+[[ "$1" == "--help" || "$1" == "-h" ]] && show_help
 
 # Try to detect default repo name from remote origin URL (supports SSH and HTTPS)
 DEFAULT_REPO=$(git remote get-url origin 2>/dev/null | \
