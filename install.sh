@@ -45,7 +45,6 @@ add_if_missing "export TOOLBOXDIR=\"$TOOLBOXDIR\""
 add_if_missing "export PATH=\"\$TOOLBOXDIR/scripts:\$PATH\""
 add_if_missing "source \$TOOLBOXDIR/alias_def.txt"
 add_if_missing "alias toolbox=\"cd \$TOOLBOXDIR\""
-alias tpush='cd $TOOLBOXDIR && git add . && git commit -m "WIP" && git pull --rebase && git push -u origin main'
 add_if_missing "alias tpull='cd \$TOOLBOXDIR && git pull'"
 
 echo "🔗 Updated $BASHRC with TOOLBOXDIR and aliases"
