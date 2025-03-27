@@ -52,8 +52,13 @@ else
     echo "Remote origin already exists."
 fi
 
-# Add, commit, push
+# Re-add all tracked files to catch permission changes
+git ls-files -s | awk '{print $4}' | xargs git add
+
+# Stage new files and modified content
 git add .
+
+# Commit and push
 git commit -m "$COMMIT_MSG"
 git push -u origin main
 
