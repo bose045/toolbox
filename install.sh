@@ -113,3 +113,4 @@ if [[ "$LINK_GIT" == "y" || "$LINK_GIT" == "yes" ]]; then
     echo "ℹ️  You can now: cd \$TOOLBOXDIR && git pull/push"
 fi
 
+
